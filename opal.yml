@@ -1,0 +1,11 @@
+name: opal
+channels:
+  - bioconda
+  - defaults
+dependencies:
+  - numpy==1.16.4
+  - graphaligner==1.0.13
+  - jupyter
+  - pip
+  - pip:
+    - cami-opal
