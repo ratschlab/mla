@@ -3,7 +3,14 @@
 GRAPH=fungi
 NTHREADS=10
 
-# build metagraph index from reads
+# make GFA (for use with GraphAligner)
+./metagraph assemble --unitigs --compacted --to-gfa $GRAPH.dbg -o $GRAPH.gfa
+
+# make PLAST index
+./PLAST -i fungi -R assemblies/*.path_cover.fasta.gz -t $NTHREADS -w 13 -a
+
+
+# build metagraph index from walk covers
 ls nobackup/assemblies/*.path_cover.fasta.gz | ./metagraph build -k 31 --fwd-and-reverse -o $GRAPH -p $NTHREADS
 
 mkdir -p nobackup/columns
