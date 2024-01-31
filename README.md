@@ -22,3 +22,13 @@
 1) For each genome `$ACC.fa`, run `./make_sample.sh $ACC.fa`
 2) Build the MetaGraph, PLAST, and GFA indexes by running `./make_graph.sh`
 3) Generate query reads by running `./make_subset.sh`
+
+## Run the alignments
+```
+for a in query_reads/*.fa; do
+    ./map_query_slc.sh $a
+    ./map_query_mla.sh $a
+    ./map_query_plast.sh $a
+    ./map_query_ga_joint.sh $a
+done
+```
