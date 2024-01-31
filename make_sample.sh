@@ -12,7 +12,6 @@ TEST_SEED=2
 OUTDIR=nobackup/samples
 LOGDIR=nobackup/logs
 DBGDIR=nobackup/k$K
-CLUSTERDIR=nobackup/k$K/clusters
 TESTILLUMINADIR=nobackup/illumina
 TESTCLRDIR=nobackup/clr
 TESTHIFIDIR=nobackup/hifi
