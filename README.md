@@ -1,7 +1,7 @@
 # Scripts and data for reproducing MLA's evaluation
 
 ## Software used
-- MetaGraph (development commit [649c7b4c96c073c249f6092d306967b39e2eafd1](https://github.com/ratschlab/metagraph/tree/649c7b4c96c073c249f6092d306967b39e2eafd1))
+- MetaGraph (development commit [649c7b4c96c073c249f6092d306967b39e2eafd1](https://github.com/ratschlab/metagraph/tree/649c7b4c96c073c249f6092d306967b39e2eafd1), includes [KMC](https://github.com/karasikov/KMC/tree/0e2ffe0f6fa3564bf7305ac35a803a8e972530e8))
 - ART Illumina ([v2.5.8](https://www.niehs.nih.gov/research/resources/software/biostatistics/art))
 - pbsim3 (commit [v3.0.0](https://github.com/yukiteruono/pbsim3/tree/v3.0.0))
 - PacBio ccs ([v6.4.0](https://anaconda.org/bioconda/pbccs))
