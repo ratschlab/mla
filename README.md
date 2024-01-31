@@ -11,10 +11,13 @@
 - samtools (experiments were run with v1.17)
 
 ## Setting up the environment
-1) Place symlinks for the files `ERRHMM-SEQUEL.model` and `ERRHMM-ONT.model` from `pbsim3` in the root directory, alongside symlinks for the `art_illumina`, `pbsim`, `PLAST`, `GraphAligner`, `metagraph`, and `KMC` executables.
-2) Ensure that `samtools` and `reformat.sh` (from `bbmap`) are in your `$PATH`.
-3) Download the genomes with the accessions listed in `accession_list` to a directory, with each genome (e.g., if the accession ID is stored in the environment variable `ACC`) in a file named `$ACC.fa`.
+1) Compile MetaGraph from source and install all other required software.
+2) Place symlinks for the files `ERRHMM-SEQUEL.model` and `ERRHMM-ONT.model` from `pbsim3` in the root directory, alongside symlinks for the `art_illumina`, `pbsim`, `PLAST`, `GraphAligner`, `metagraph`, and `KMC` executables.
+3) Ensure that `samtools` and `reformat.sh` (from `bbmap`) are in your `$PATH`.
+4) Download the genomes with the accessions listed in `accession_list` to a directory, with each genome (e.g., if the accession ID is stored in the environment variable `ACC`) in a file named `$ACC.fa`.
+5) Download the random entropy source file [`seed2`](https://public.bmi.inf.ethz.ch/resources/mla/seed2) (used to generate query sets)
 
 ## Constructing a simulated joint assembly graph and the query sets
 1) For each genome `$ACC.fa`, run `./make_sample.sh $ACC.fa`
 2) Build the MetaGraph, PLAST, and GFA indexes by running `./make_graph.sh`
+3) Generate query reads by running `./make_subset.sh`
