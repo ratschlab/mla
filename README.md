@@ -16,6 +16,7 @@
 3) Ensure that `samtools` and `reformat.sh` (from `bbmap`) are in your `$PATH`.
 4) Download the genomes with the accessions listed in `accession_list` to a directory, with each genome (e.g., if the accession ID is stored in the environment variable `ACC`) in a file named `$ACC.fa`.
 5) Download the random entropy source file [`seed2`](https://public.bmi.inf.ethz.ch/resources/mla/seed2) (used to generate query sets)
+6) Run `make` to compile `parse_plast`
 
 ## Constructing a simulated joint assembly graph and the query sets
 1) For each genome `$ACC.fa`, run `./make_sample.sh $ACC.fa`
