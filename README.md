@@ -8,5 +8,13 @@
 - PLAST (commit [451369eb23e84328ff9334398d185798d2dc5149](https://gitlab.ub.uni-bielefeld.de/gi/plast/-/tree/451369eb23e84328ff9334398d185798d2dc5149))
 - GraphAligner ([v1.0.17b](https://anaconda.org/bioconda/graphaligner))
 - bbmap ([v38.86](https://sourceforge.net/projects/bbmap/))
+- samtools (experiments were run with v1.17)
 
-README under construction
+## Setting up the environment
+1) Place symlinks for the files `ERRHMM-SEQUEL.model` and `ERRHMM-ONT.model` from `pbsim3` in the root directory, alongside symlinks for the `art_illumina`, `pbsim`, `PLAST`, `GraphAligner`, `metagraph`, and `KMC` executables.
+2) Ensure that `samtools` and `reformat.sh` (from `bbmap`) are in your `$PATH`.
+3) Download the genomes with the accessions listed in `accession_list` to a directory, with each genome (e.g., if the accession ID is stored in the environment variable `ACC`) in a file named `$ACC.fa`.
+
+## Constructing a simulated joint assembly graph and the query sets
+1) For each genome `$ACC.fa`, run `./make_sample.sh $ACC.fa`
+2) Build the MetaGraph, PLAST, and GFA indexes by running `./make_graph.sh`
