@@ -7,5 +7,6 @@
 - PacBio ccs ([v6.4.0](https://anaconda.org/bioconda/pbccs))
 - PLAST (commit [451369eb23e84328ff9334398d185798d2dc5149](https://gitlab.ub.uni-bielefeld.de/gi/plast/-/tree/451369eb23e84328ff9334398d185798d2dc5149))
 - GraphAligner ([v1.0.17b](https://anaconda.org/bioconda/graphaligner))
+- bbmap ([v38.86](https://sourceforge.net/projects/bbmap/))
 
 README under construction
