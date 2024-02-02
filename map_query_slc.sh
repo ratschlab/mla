@@ -7,5 +7,7 @@ PARAMS="align --align-alternative-alignments 5 --align-chains-per-char 0.01 --al
 mkdir -p alignments
 
 echo "With chaining"
-/usr/bin/time -v ./metagraph $PARAMS --align-xdrop $CHAIN_XDROP -a fungi.row_diff_brwt_coord.annodbg -a fungi.seq.column.annodbg --path-cover >alignments/$(basename $1).$2.tsv 2>alignments/$(basename $1).$2.log
+OUTPREFIX="alignments/$(basename $1).$2"
+/usr/bin/time -v ./metagraph $PARAMS --align-xdrop $CHAIN_XDROP -a fungi.row_diff_brwt_coord.annodbg -a fungi.seq.column.annodbg --path-cover >$OUTPREFIX.tsv 2>$OUTPREFIX.log
+./classify_mg.py $OUTPREFIX.tsv $1 >$OUTPREFIX.tsv.wgsunifrac.sweep.tsv 2>$OUTPREFIX.tsv.wgsunifrac.sweep.log
 

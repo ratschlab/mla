@@ -7,7 +7,15 @@ PARAMS="align --align-alternative-alignments 5 --align-chains-per-char 0.01 --al
 mkdir -p alignments
 
 echo "With MLA chaining"
-/usr/bin/time -v ./metagraph $PARAMS --align-xdrop $CHAIN_XDROP -a fungi.row_diff_brwt_coord.annodbg -a fungi.seq.column.annodbg --path-cover --align-post-chain >alignments/$(basename $1).$2.mla.tsv 2>alignments/$(basename $1).$2.mla.log
-/usr/bin/time -v ./metagraph $PARAMS --align-xdrop $CHAIN_XDROP -a fungi.row_diff_brwt_coord.annodbg -a fungi.seq.column.annodbg --path-cover --align-post-chain --align-fixed-haplotype 10 >alignments/$(basename $1).$2.mlafixhap.tsv 2>alignments/$(basename $1).$2.mlafixhap.log
-/usr/bin/time -v ./metagraph $PARAMS --align-xdrop $CHAIN_XDROP -a fungi.row_diff_brwt_coord.annodbg -a fungi.seq.column.annodbg --path-cover --align-post-chain --align-fixed-haplotype -10 >alignments/$(basename $1).$2.mlanonlc.tsv 2>alignments/$(basename $1).$2.mlanonlc.log
+OUTPREFIX="alignments/$(basename $1).$2.mla"
+/usr/bin/time -v ./metagraph $PARAMS --align-xdrop $CHAIN_XDROP -a fungi.row_diff_brwt_coord.annodbg -a fungi.seq.column.annodbg --path-cover --align-post-chain >$OUTPREFIX.tsv 2>$OUTPREFIX.log
+./classify_mg.py $OUTPREFIX.tsv $1 >$OUTPREFIX.tsv.wgsunifrac.sweep.tsv 2>$OUTPREFIX.tsv.wgsunifrac.sweep.log
+
+OUTPREFIX="alignments/$(basename $1).$2.mlafixha"
+/usr/bin/time -v ./metagraph $PARAMS --align-xdrop $CHAIN_XDROP -a fungi.row_diff_brwt_coord.annodbg -a fungi.seq.column.annodbg --path-cover --align-post-chain --align-fixed-haplotype 10 >$OUTPREFIX.tsv 2>$OUTPREFIX.log
+./classify_mg.py $OUTPREFIX.tsv $1 >$OUTPREFIX.tsv.wgsunifrac.sweep.tsv 2>$OUTPREFIX.tsv.wgsunifrac.sweep.log
+
+OUTPREFIX="alignments/$(basename $1).$2.mlanonlc"
+/usr/bin/time -v ./metagraph $PARAMS --align-xdrop $CHAIN_XDROP -a fungi.row_diff_brwt_coord.annodbg -a fungi.seq.column.annodbg --path-cover --align-post-chain --align-fixed-haplotype -10 >$OUTPREFIX.tsv 2>$OUTPREFIX.log
+./classify_mg.py $OUTPREFIX.tsv $1 >$OUTPREFIX.tsv.wgsunifrac.sweep.tsv 2>$OUTPREFIX.tsv.wgsunifrac.sweep.log
 

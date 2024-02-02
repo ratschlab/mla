@@ -9,6 +9,9 @@
 - GraphAligner ([v1.0.17b](https://anaconda.org/bioconda/graphaligner))
 - bbmap ([v38.86](https://sourceforge.net/projects/bbmap/))
 - samtools (experiments were run with v1.17)
+- WGSUniFrac (commit [d5c698ba4699aba168fd29fc00024d655c36183f](https://github.com/KoslickiLab/WGSUniFrac/tree/d5c698ba4699aba168fd29fc00024d655c36183f))
+- numpy (v1.26.0)
+- pandas (v.2.1.1)
 
 ## Setting up the environment
 1) Compile MetaGraph from source and install all other required software.
@@ -17,13 +20,14 @@
 4) Download the genomes with the accessions listed in `accession_list` to a directory, with each genome (e.g., if the accession ID is stored in the environment variable `ACC`) in a file named `$ACC.fa`.
 5) Download the random entropy source file [`seed2`](https://public.bmi.inf.ethz.ch/resources/mla/seed2) (used to generate query sets)
 6) Run `make` to compile `parse_plast`
+7) Download the accession-ID augmented taxonomic tree from the `augmented` directory at [here](https://public.bmi.inf.ethz.ch/resources/mla/).
 
 ## Constructing a simulated joint assembly graph and the query sets
 1) For each genome `$ACC.fa`, run `./make_sample.sh $ACC.fa`
 2) Build the MetaGraph, PLAST, and GFA indexes by running `./make_graph.sh`
 3) Generate query reads by running `./make_subset.sh`
 
-## Run the alignments
+## Run the alignments and classify the reads
 ```
 for a in query_reads/*.fa; do
     ./map_query_slc.sh $a
