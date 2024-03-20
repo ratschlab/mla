@@ -23,13 +23,11 @@
 - pandas (v.2.1.1)
 
 ## Setting up the environment
-1) Download pre-compiled binaries of `metagraph`, `PLAST`, `kmc`, and `parse_plast` from [here](https://public.bmi.inf.ethz.ch/resources/mla/software/).
-2) Place symlinks for the files `ERRHMM-SEQUEL.model` and `ERRHMM-ONT.model` from `pbsim3` in the root directory, alongside symlinks for the `art_illumina`, `pbsim`, `PLAST`, `GraphAligner`, `metagraph`, and `KMC` executables.
-3) Ensure that `samtools` and `reformat.sh` (from `bbmap`) are in your `$PATH`.
-4) Download the genomes with the accessions listed in `accession_list` to a directory, with each genome (e.g., if the accession ID is stored in the environment variable `ACC`) in a file named `$ACC.fa`.
-5) Download the random entropy source file [`seed2`](https://public.bmi.inf.ethz.ch/resources/mla/seed2) (used to generate query sets)
-6) Run `make` to compile `parse_plast`
-7) Download the accession-ID augmented taxonomic tree from the `augmented` directory at [here](https://public.bmi.inf.ethz.ch/resources/mla/).
+1) Download pre-compiled binaries of `metagraph`, `PLAST`, `kmc`, and `parse_plast` from [here](https://public.bmi.inf.ethz.ch/resources/mla/software/). Place them in your working directory.
+2) Place symlinks for the files `ERRHMM-SEQUEL.model` and `ERRHMM-ONT.model` from `pbsim3` and the executables `art_illumina`, `pbsim`, and `GraphAligner` in your working directory.
+3) Download the genomes from [here](https://public.bmi.inf.ethz.ch/resources/mla/references/) to a directory named `references`. A list of accessions is in `accession_list`.
+4) Download the random entropy source file [`seed2`](https://public.bmi.inf.ethz.ch/resources/mla/seed2) (used to generate query sets)
+5) Download the accession-ID augmented taxonomic tree from the `augmented` directory [here](https://public.bmi.inf.ethz.ch/resources/mla/).
 
 ## Constructing a simulated joint assembly graph and the query sets
 1) For each genome `$ACC.fa`, run `./make_sample.sh $ACC.fa`
@@ -45,3 +43,6 @@ for a in query_reads/*.fa; do
     ./map_query_ga.sh $a
 done
 ```
+
+## Notes
+- If you prefer to compute `parse_plast.cpp` yourself, we have provided a `Makefile`.
