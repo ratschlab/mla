@@ -45,4 +45,5 @@ done
 ```
 
 ## Notes
-- If you prefer to compute `parse_plast.cpp` yourself, we have provided a `Makefile`.
+- If you prefer to compile `parse_plast.cpp` yourself, we have provided a `Makefile`.
+- If you prefer to compile `PLAST` yourself, we have provided a template `CMakeLists.txt` file in `plast_cmake`. Please edit it to point to the `include` directory and static lib of `Bifrost`.
