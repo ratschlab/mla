@@ -23,7 +23,7 @@
 - pandas (v.2.1.1)
 
 ## Setting up the environment
-1) Compile MetaGraph from source and install all other required software.
+1) Download pre-compiled binaries of `metagraph`, `PLAST`, `kmc`, and `parse_plast` from [here](https://public.bmi.inf.ethz.ch/resources/mla/software/).
 2) Place symlinks for the files `ERRHMM-SEQUEL.model` and `ERRHMM-ONT.model` from `pbsim3` in the root directory, alongside symlinks for the `art_illumina`, `pbsim`, `PLAST`, `GraphAligner`, `metagraph`, and `KMC` executables.
 3) Ensure that `samtools` and `reformat.sh` (from `bbmap`) are in your `$PATH`.
 4) Download the genomes with the accessions listed in `accession_list` to a directory, with each genome (e.g., if the accession ID is stored in the environment variable `ACC`) in a file named `$ACC.fa`.
