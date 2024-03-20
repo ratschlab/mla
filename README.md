@@ -18,7 +18,7 @@
 - GraphAligner ([v1.0.17b](https://anaconda.org/bioconda/graphaligner))
 
 ### Additional software for evaluating alignment results
-- WGSUniFrac (commit [d5c698ba4699aba168fd29fc00024d655c36183f](https://github.com/KoslickiLab/WGSUniFrac/tree/d5c698ba4699aba168fd29fc00024d655c36183f))
+- WGSUniFrac (commit [d5c698ba4699aba168fd29fc00024d655c36183f](https://github.com/KoslickiLab/WGSUniFrac/tree/d5c698ba4699aba168fd29fc00024d655c36183f), included here)
 - numpy (v1.26.0)
 - pandas (v.2.1.1)
 
