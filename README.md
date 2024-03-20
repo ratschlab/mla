@@ -31,7 +31,7 @@
 6) Download the accession-ID augmented taxonomic tree from the `augmented` directory [here](https://public.bmi.inf.ethz.ch/resources/mla/)
 
 ## Constructing a simulated joint assembly graph and the query sets
-1) For each genome `$ACC.fa`, run `./make_sample.sh $ACC.fa`
+1) Simulate reads for each genome: `for a in references/*.fa; do ./make_sample.sh $a; done`
 2) Build the MetaGraph, PLAST, and GFA indexes by running `./make_graph.sh`
 3) Generate query reads by running `./make_subset.sh`
 
