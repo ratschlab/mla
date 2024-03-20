@@ -20,4 +20,4 @@ ls nobackup/columns/*.annodbg |  /usr/bin/time -v ./metagraph transform_anno --s
 /usr/bin/time -v ./metagraph assemble --unitigs --compacted --to-gfa $GRAPH.dbg -o $GRAPH.gfa -v >gfa.log 2>&1
 
 # make PLAST index
- /usr/bin/time -v PLAST Build -i $GRAPH.plast -R assemblies/*.path_cover.fasta.gz -t $NTHREADS -w 13 -a >plast.log 2>&1
+/usr/bin/time -v PLAST Build -i $GRAPH.plast -R assemblies/*.path_cover.fasta.gz -t $NTHREADS -w 13 -a >plast.log 2>&1
