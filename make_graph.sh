@@ -1,7 +1,7 @@
 #!/bin/bash
 
 GRAPH=fungi
-NTHREADS=10
+NTHREADS=1
 
 # build metagraph index from walk covers
 ls nobackup/assemblies/*.path_cover.fasta.gz | ./metagraph build -k 31 --fwd-and-reverse -o $GRAPH -p $NTHREADS
