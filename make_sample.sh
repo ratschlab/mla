@@ -37,7 +37,7 @@ for j in $(seq 1 $NUM_SAMPLES); do
     TEST_FILE_PREFIX="$BASENAME.reads.$TESTDEPTH.$j"
 
     # generate graph reads
-    ./art_illumina -i $INFILE $SART_PARAMS -o $OUTDIR/$SAMPLE_FILE_PREFIX. --rndSeed $j
+    art_illumina -i $INFILE $SART_PARAMS -o $OUTDIR/$SAMPLE_FILE_PREFIX. --rndSeed $j
     reformat.sh in=$OUTDIR/$SAMPLE_FILE_PREFIX.1.fq in2=$OUTDIR/$SAMPLE_FILE_PREFIX.2.fq out=$OUTDIR/$SAMPLE_FILE_PREFIX.fa.gz fastawrap=-1 overwrite=true
     rm $OUTDIR/$SAMPLE_FILE_PREFIX.*aln $OUTDIR/$SAMPLE_FILE_PREFIX.*.fq
 
@@ -49,24 +49,24 @@ for j in $(seq 1 $NUM_SAMPLES); do
 
     # generate test reads
     # illumina
-    ./art_illumina -i $INFILE $ART_PARAMS -o $TESTILLUMINADIR/$TEST_FILE_PREFIX. --rndSeed $TEST_SEED
+    art_illumina -i $INFILE $ART_PARAMS -o $TESTILLUMINADIR/$TEST_FILE_PREFIX. --rndSeed $TEST_SEED
     reformat.sh in=$TESTILLUMINADIR/$TEST_FILE_PREFIX.1.fq in2=$TESTILLUMINADIR/$TEST_FILE_PREFIX.2.fq out=$TESTILLUMINADIR/$TEST_FILE_PREFIX.fa.gz fastawrap=-1 overwrite=true
     rm $TESTILLUMINADIR/$TEST_FILE_PREFIX.*aln $TESTILLUMINADIR/$TEST_FILE_PREFIX.*.fq
 
     # PB CLR
-    ./pbsim $PBSIM_PARAMS --genome $INFILE --prefix $TESTCLRDIR/$TEST_FILE_PREFIX
+    pbsim $PBSIM_PARAMS --genome $INFILE --prefix $TESTCLRDIR/$TEST_FILE_PREFIX
     reformat.sh in=$TESTCLRDIR/${TEST_FILE_PREFIX}_0001.fastq out=$TESTCLRDIR/$TEST_FILE_PREFIX.fa.gz fastawrap=-1 overwrite=true
     rm $TESTCLRDIR/${TEST_FILE_PREFIX}_0001.fastq $TESTCLRDIR/${TEST_FILE_PREFIX}_0001.maf $TESTCLRDIR/${TEST_FILE_PREFIX}_0001.ref
 
     # PB HIFI
-    ./pbsim $PBSIM_PARAMS --genome $INFILE --prefix $TESTHIFIDIR/$TEST_FILE_PREFIX --pass-num 10
+    pbsim $PBSIM_PARAMS --genome $INFILE --prefix $TESTHIFIDIR/$TEST_FILE_PREFIX --pass-num 10
     samtools view -b -h $TESTHIFIDIR/${TEST_FILE_PREFIX}_0001.sam > $TESTHIFIDIR/${TEST_FILE_PREFIX}_0001.bam
     rm $TESTHIFIDIR/${TEST_FILE_PREFIX}_0001.sam
     ccs --min-passes 10 $TESTHIFIDIR/${TEST_FILE_PREFIX}_0001.bam $TESTHIFIDIR/$TEST_FILE_PREFIX.fa.gz
     rm $TESTHIFIDIR/${TEST_FILE_PREFIX}_0001.bam $TESTHIFIDIR/${TEST_FILE_PREFIX}_0001.maf $TESTHIFIDIR/${TEST_FILE_PREFIX}_0001.ref $TESTHIFIDIR/${TEST_FILE_PREFIX}.ccs_report.txt $TESTHIFIDIR/${TEST_FILE_PREFIX}.zmw_metrics.json.gz
 
     # ONT
-    ./pbsim $ONTSIM_PARAMS --genome $INFILE --prefix $TESTONTDIR/$TEST_FILE_PREFIX
+    pbsim $ONTSIM_PARAMS --genome $INFILE --prefix $TESTONTDIR/$TEST_FILE_PREFIX
     reformat.sh in=$TESTONTDIR/${TEST_FILE_PREFIX}_0001.fastq out=$TESTONTDIR/$TEST_FILE_PREFIX.fa.gz fastawrap=-1 overwrite=true
     rm $TESTONTDIR/${TEST_FILE_PREFIX}_0001.fastq $TESTONTDIR/${TEST_FILE_PREFIX}_0001.maf $TESTONTDIR/${TEST_FILE_PREFIX}_0001.ref
 done
