@@ -36,7 +36,7 @@
 ## Run the alignments and classify the reads
 ```
 for a in query_reads/*.fa; do
-    ./map_query_slc.sh $a
+    ./map_query_sca.sh $a
     ./map_query_mla.sh $a
     ./map_query_plast.sh $a
     ./map_query_ga.sh $a
