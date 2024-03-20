@@ -20,4 +20,4 @@ ls nobackup/columns/*.annodbg | ./metagraph transform_anno --sketch-precision 0.
 ./metagraph assemble --unitigs --compacted --to-gfa $GRAPH.dbg -o $GRAPH.gfa
 
 # make PLAST index
-./PLAST -i fungi -R assemblies/*.path_cover.fasta.gz -t $NTHREADS -w 13 -a
+PLAST -i fungi -R assemblies/*.path_cover.fasta.gz -t $NTHREADS -w 13 -a
