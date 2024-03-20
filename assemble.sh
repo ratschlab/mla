@@ -1,8 +1,7 @@
 #!/bin/bash
 
-METAGRAPH_DIR=~/apps/metagraph/metagraph/build_mla_ng
-METAGRAPH=$METAGRAPH_DIR/metagraph
-KMC=$METAGRAPH_DIR/KMC/kmc
+METAGRAPH=./metagraph
+KMC=./kmc
 
 mkdir -p assemblies
 
