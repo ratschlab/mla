@@ -24,10 +24,9 @@
 
 ## Setting up the environment
 1) Download pre-compiled binaries of `metagraph`, `PLAST`, `kmc`, and `parse_plast` from [here](https://public.bmi.inf.ethz.ch/resources/mla/software/). Place them in your working directory.
-2) Place symlinks for the files `ERRHMM-SEQUEL.model` and `ERRHMM-ONT.model` from `pbsim3` and the executables `art_illumina`, `pbsim`, and `GraphAligner` in your working directory.
-3) Download the genomes from [here](https://public.bmi.inf.ethz.ch/resources/mla/references/) to a directory named `references`. A list of accessions is in `accession_list`.
-4) Download the random entropy source file [`seed2`](https://public.bmi.inf.ethz.ch/resources/mla/seed2) (used to generate query sets)
-5) Download the accession-ID augmented taxonomic tree from the `augmented` directory [here](https://public.bmi.inf.ethz.ch/resources/mla/).
+2) Download the genomes from [here](https://public.bmi.inf.ethz.ch/resources/mla/references/) to a directory named `references`. A list of accessions is in `accession_list`.
+3) Download the random entropy source file [`seed2`](https://public.bmi.inf.ethz.ch/resources/mla/seed2) (used to generate query sets)
+4) Download the accession-ID augmented taxonomic tree from the `augmented` directory [here](https://public.bmi.inf.ethz.ch/resources/mla/).
 
 ## Constructing a simulated joint assembly graph and the query sets
 1) For each genome `$ACC.fa`, run `./make_sample.sh $ACC.fa`
