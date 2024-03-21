@@ -36,7 +36,7 @@
    for a in references/*.fa; do ./make_sample.sh $a; done
    for a in illumina hifi clr ont; do ./make_subset.sh $a; done
    ```
-3) Build the MetaGraph, PLAST, and GFA indexes by running `./make_graph.sh`. In this script, you can set the number of threads in the variable `$NTHREADS`.
+3) Build the MetaGraph, PLAST, and GFA indexes by running `./make_graph.sh`. In this script, you can set the number of threads in the variable `$NTHREADS`. We provide precomputed indexes [here](https://public.bmi.inf.ethz.ch/resources/mla/graph/).
 4) Generate query reads by running `./make_subset.sh`
 
 ## Run the alignments and classify the reads
