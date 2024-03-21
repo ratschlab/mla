@@ -22,6 +22,9 @@
 - numpy (v1.26.0)
 - pandas (v.2.1.1)
 
+### Data used for evaluations
+- [https://public.bmi.inf.ethz.ch/resources/mla/](https://public.bmi.inf.ethz.ch/resources/mla/)
+
 ## Setting up the environment
 1) To install most of the required software for the evaluation, set up a `conda` environment using the provided `environment.yml` file: `conda env create -f environment.yml`
 2) Activate the environment: `conda activate mla`
