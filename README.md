@@ -25,7 +25,7 @@
 ## Setting up the environment
 1) To install most of the required software for the evaluation, set up a `conda` environment using the provided `environment.yml` file: `conda env create -f environment.yml`
 2) Activate the environment: `conda activate mla`
-3) Download pre-compiled binaries of `metagraph`, `PLAST`, `kmc`, and `parse_plast` from [here](https://public.bmi.inf.ethz.ch/resources/mla/software/) and place them in your working directory.
+3) Download the pre-compiled binaries of `metagraph`, `PLAST`, `kmc`, and `parse_plast` from [here](https://public.bmi.inf.ethz.ch/resources/mla/software/) and place them in your working directory.
 4) Download the genomes from [here](https://public.bmi.inf.ethz.ch/resources/mla/references/) to a directory named `references`. A list of accessions is in `accession_list`
 5) Download the random entropy source file [`seed2`](https://public.bmi.inf.ethz.ch/resources/mla/seed2) (used to generate query sets)
 6) Download the accession-ID augmented taxonomic tree from the `augmented` directory [here](https://public.bmi.inf.ethz.ch/resources/mla/)
