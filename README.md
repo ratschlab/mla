@@ -23,7 +23,7 @@
 - pandas (v.2.1.1)
 
 ## Setting up the environment
-1) To install most of the required software, set up a `conda` environment using the provided `environment.yml` file: `conda env create -f environment.yml`
+1) To install most of the required software for the evaluation, set up a `conda` environment using the provided `environment.yml` file: `conda env create -f environment.yml`
 2) Activate the environment: `conda activate mla`
 3) Download pre-compiled binaries of `metagraph`, `PLAST`, `kmc`, and `parse_plast` from [here](https://public.bmi.inf.ethz.ch/resources/mla/software/) and place them in your working directory.
 4) Download the genomes from [here](https://public.bmi.inf.ethz.ch/resources/mla/references/) to a directory named `references`. A list of accessions is in `accession_list`
