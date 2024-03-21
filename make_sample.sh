@@ -25,8 +25,6 @@ ONTSIM_PARAMS="--strategy wgs --method errhmm --errhmm ERRHMM-ONT.model --depth 
 mkdir -p $OUTDIR
 mkdir -p $LOGDIR
 mkdir -p $DBGDIR
-mkdir -p $CLUSTERDIR
-mkdir -p $DBG2DIR
 mkdir -p $TESTILLUMINADIR
 mkdir -p $TESTCLRDIR
 mkdir -p $TESTHIFIDIR
