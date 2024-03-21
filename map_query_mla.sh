@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PARAMS="align -i fungi.dbg -a fungi.row_diff_brwt_coord.annodbg -a fungi.seq.column.annodbg --align-edit-distance -v --align-profile MLA $1"
+PARAMS="align -i fungi.dbg -a fungi.row_diff_brwt_coord.annodbg -a fungi.seq.column.annodbg --align-edit-distance -v --alignment-profile MLA $1"
 
 mkdir -p alignments
 
