@@ -50,7 +50,8 @@ done
 ```
 
 ## Notes
-- To compile `parse_plast.cpp` yourself, we have provided a `Makefile`.
-- To compile `PLAST` yourself, we have provided a template `CMakeLists.txt` file in `plast_cmake`. Please edit it to point to the `include` directory and static lib of `Bifrost`.
-- To compile MetaGraph from source, follow the instructions [here](https://metagraph.ethz.ch/static/docs/installation.html#install-from-source). Remember to checkout the commit listed above from the `hm/aln_alt_label_change` branch before compiling.
+- To compile some of the software yourself from source
+   - `parse_plast.cpp`: we have provided a `Makefile`.
+   - `PLAST`: we have provided a template `CMakeLists.txt` file in `plast_cmake`. Please edit it to point to the `include` directory and static lib of `Bifrost`.
+   - `MetaGraph`: follow the instructions [here](https://metagraph.ethz.ch/static/docs/installation.html#install-from-source). Remember to checkout the commit listed above from the `hm/aln_alt_label_change` branch before compiling.
 - Run `metagraph align` to view the help menu listing alignment parameters. To list a more advanced set of parameters, run `metagraph align --advanced`.
