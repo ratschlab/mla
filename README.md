@@ -2,7 +2,7 @@
 
 ## Software used
 ### Running MLA
-- MetaGraph (development commit [649c7b4c96c073c249f6092d306967b39e2eafd1](https://github.com/ratschlab/metagraph/tree/649c7b4c96c073c249f6092d306967b39e2eafd1), includes [KMC](https://github.com/karasikov/KMC/tree/0e2ffe0f6fa3564bf7305ac35a803a8e972530e8))
+- MetaGraph (development commit [bd39d9594e77f276e674033b52d9b26ec3a281e3](https://github.com/ratschlab/metagraph/tree/bd39d9594e77f276e674033b52d9b26ec3a281e3), includes [KMC](https://github.com/karasikov/KMC/tree/0e2ffe0f6fa3564bf7305ac35a803a8e972530e8))
 
 ### Simulating reads
 - ART Illumina ([v2.5.8](https://www.niehs.nih.gov/research/resources/software/biostatistics/art))
@@ -50,6 +50,7 @@ done
 ```
 
 ## Notes
-- If you prefer to compile `parse_plast.cpp` yourself, we have provided a `Makefile`.
-- If you prefer to compile `PLAST` yourself, we have provided a template `CMakeLists.txt` file in `plast_cmake`. Please edit it to point to the `include` directory and static lib of `Bifrost`.
+- To compile `parse_plast.cpp` yourself, we have provided a `Makefile`.
+- To compile `PLAST` yourself, we have provided a template `CMakeLists.txt` file in `plast_cmake`. Please edit it to point to the `include` directory and static lib of `Bifrost`.
+- To compile MetaGraph from source, follow the instructions [here](https://metagraph.ethz.ch/static/docs/installation.html#install-from-source). Remember to checkout the commit listed above from the `hm/aln_alt_label_change` branch.
 - Run `metagraph align` to view the help menu listing alignment parameters. To list a more advanced set of parameters, run `metagraph align --advanced`.
